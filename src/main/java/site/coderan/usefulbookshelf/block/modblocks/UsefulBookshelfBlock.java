@@ -138,7 +138,7 @@ public class UsefulBookshelfBlock extends Block implements EntityBlock, SimpleWa
     protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
         UsefulBookshelfBlockEntity blockEntity = (UsefulBookshelfBlockEntity) level.getBlockEntity(blockPos);
         // play sound
-        ((ClientLevel)level).playLocalSound(blockPos, ModSounds.BOOKSHELF_SOUND);
+        // ((ClientLevel)level).playLocalSound(blockPos, ModSounds.BOOKSHELF_SOUND);
         Direction hitDirection = blockHitResult.getDirection();
         MenuProvider menuProvider = this.getMenuProvider(blockState, level, blockPos, hitDirection);
         if (!level.isClientSide() && blockEntity instanceof UsefulBookshelfBlockEntity && player instanceof ServerPlayer) {
