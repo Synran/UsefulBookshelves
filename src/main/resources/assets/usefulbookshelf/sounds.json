@@ -1,0 +1,8 @@
+{
+  "bookshelf_sound": {
+    "subtitle": "subtitles.pfm.toilet_flushing",
+    "sounds": [
+      "usefulbookshelf:bookshelf_sound"
+    ]
+  }
+}
