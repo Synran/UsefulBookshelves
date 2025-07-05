@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
@@ -39,6 +40,7 @@ import site.coderan.usefulbookshelf.block.modblockentities.UsefulBookshelfBlockE
 import site.coderan.usefulbookshelf.block.modblockentities.UsefulBookshelfHalfBlockEntity;
 import site.coderan.usefulbookshelf.gui.modmenus.UsefulBookshelfMenu;
 import site.coderan.usefulbookshelf.item.ModItems;
+import site.coderan.usefulbookshelf.sounds.ModSounds;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -144,6 +146,10 @@ public class UsefulBookshelfHalfBlock  extends Block implements EntityBlock, Sim
     @Override
     protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
         UsefulBookshelfHalfBlockEntity blockEntity = (UsefulBookshelfHalfBlockEntity) level.getBlockEntity(blockPos);
+
+        // play sound when open the bookshelf
+        level.playSound(player, blockPos, ModSounds.BOOKSHELF_SOUND.value(), SoundSource.BLOCKS);
+
         Direction hitDirection = blockHitResult.getDirection();
         MenuProvider menuProvider = this.getMenuProvider(blockState, level, blockPos, hitDirection);
         if (!level.isClientSide() && blockEntity instanceof UsefulBookshelfHalfBlockEntity && player instanceof ServerPlayer) {
