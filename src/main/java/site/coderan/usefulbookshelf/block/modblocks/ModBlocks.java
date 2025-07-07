@@ -1,16 +1,21 @@
 package site.coderan.usefulbookshelf.block.modblocks;
 
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import site.coderan.usefulbookshelf.ModMain;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class ModBlocks {
+    public static List<DeferredHolder<Block, UsefulBookshelfBlock>> USEFUL_BOOKSHELF_SET = new ArrayList<>();
     // 模组方块注册器
     public static final DeferredRegister<Block> BLOCK_REGISTER = DeferredRegister.create(
             BuiltInRegistries.BLOCK,
@@ -39,4 +44,20 @@ public class ModBlocks {
                     .pushReaction(PushReaction.NORMAL)
             )
     );
+    // 测试provider的Block
+    public static final DeferredHolder<Block, UsefulBookshelfBlock> TEST_BLOCK = BLOCK_REGISTER.register(
+            "test_block",
+            () -> new UsefulBookshelfBlock(BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)
+                    .strength(2.0F,3.0F)
+                    .ignitedByLava()
+                    .pushReaction(PushReaction.NORMAL)
+            )
+    );
+    // 测试多个BlockEntity问题
+    static {
+        USEFUL_BOOKSHELF_SET.add(TEST_BLOCK);
+        USEFUL_BOOKSHELF_SET.add(USEFUL_BOOKSHELF);
+    }
 }

@@ -2,13 +2,20 @@ package site.coderan.usefulbookshelf.block.modblockentities;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import site.coderan.usefulbookshelf.ModMain;
 import site.coderan.usefulbookshelf.block.modblocks.ModBlocks;
+import site.coderan.usefulbookshelf.block.modblocks.UsefulBookshelfBlock;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class ModBlockEntities {
+    public static List<UsefulBookshelfBlock> USEFUL_BOOKSHELF_SET = new ArrayList<>();
     // 方块实体注册器
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_REGISTER = DeferredRegister.create(
             BuiltInRegistries.BLOCK_ENTITY_TYPE,
@@ -19,7 +26,7 @@ public class ModBlockEntities {
             "useful_bookshelf_entity",
             () -> new BlockEntityType<>(
                     UsefulBookshelfBlockEntity::new,
-                    ImmutableSet.of(ModBlocks.USEFUL_BOOKSHELF.get()),
+                    ImmutableSet.copyOf(ModBlockEntities.USEFUL_BOOKSHELF_SET),
                     null
             )
     );
@@ -28,8 +35,16 @@ public class ModBlockEntities {
             "useful_bookshelf_half_entity",
             () -> new BlockEntityType<>(
                     UsefulBookshelfHalfBlockEntity::new,
-                    ImmutableSet.of(ModBlocks.USEFUL_BOOKSHELF_HALF.get()),
+                    ImmutableSet.of,
                     null
             )
     );
+    static {
+        Stream<Block> blockStream = BuiltInRegistries.BLOCK.stream().filter(block -> {
+            return block instanceof UsefulBookshelfBlock;
+        });
+        blockStream.forEach(block -> {
+
+        });
+    }
 }

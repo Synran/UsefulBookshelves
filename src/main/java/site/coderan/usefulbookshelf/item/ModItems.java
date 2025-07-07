@@ -25,4 +25,10 @@ public class ModItems {
             ModBlocks.USEFUL_BOOKSHELF_HALF,
             new Item.Properties()
     );
+    // 测试provider的Item
+    public static final DeferredHolder<Item, BlockItem> TEST_BLOCK = ITEM_REGISTER.registerSimpleBlockItem(
+            "test_block",
+            ModBlocks.TEST_BLOCK,
+            new Item.Properties()
+    );
 }
