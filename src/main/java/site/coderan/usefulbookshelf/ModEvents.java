@@ -8,6 +8,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import site.coderan.usefulbookshelf.provider.ModBlockStateProvider;
+import site.coderan.usefulbookshelf.provider.ModLanguageProvider;
 
 @EventBusSubscriber(modid = ModMain.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ModEvents {
@@ -17,5 +18,6 @@ public class ModEvents {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput));
     }
 }

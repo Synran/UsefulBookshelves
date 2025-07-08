@@ -115,7 +115,7 @@ public class UsefulBookshelfHalfBlock  extends Block implements EntityBlock, Sim
     @Override
     protected List<ItemStack> getDrops(BlockState blockState, LootParams.Builder builder) {
         List<ItemStack> drops = new ArrayList<>();
-        drops.add(new ItemStack(ModItems.USEFUL_BOOKSHELF_HALF));
+        // drops.add(new ItemStack(ModItems.USEFUL_BOOKSHELF_HALF));
         return drops;
     }
     // 掉落出书架上储存的物品，就算是非正常收集也会掉落

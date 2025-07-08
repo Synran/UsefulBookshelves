@@ -16,9 +16,9 @@ public class ModMain {
     public static final String MOD_ID = "usefulbookshelf";
 
     public ModMain(IEventBus modEventBus, ModContainer modContainer) {
-        ModItems.ITEM_REGISTER.register(modEventBus);
         ModBlocks.BLOCK_REGISTER.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITY_REGISTER.register(modEventBus);
+        ModItems.ITEM_REGISTER.register(modEventBus);
         ModMenus.MENU_REGISTER.register(modEventBus);
         ModSounds.SOUND_REGISTER.register(modEventBus);
 
