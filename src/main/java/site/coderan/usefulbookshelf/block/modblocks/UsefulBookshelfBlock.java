@@ -101,7 +101,7 @@ public class UsefulBookshelfBlock extends Block implements EntityBlock, SimpleWa
     @Override
     protected List<ItemStack> getDrops(BlockState blockState, LootParams.Builder builder) {
         List<ItemStack> drops = new ArrayList<>();
-        drops.add(new ItemStack(ModItems.USEFUL_BOOKSHELF));
+        // drops.add(new ItemStack(ModItems.USEFUL_BOOKSHELF));
         return drops;
     }
     // 掉落出书架上储存的物品，就算是非正常收集也会掉落

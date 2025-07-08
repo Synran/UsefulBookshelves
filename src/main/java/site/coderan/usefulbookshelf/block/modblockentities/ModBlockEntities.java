@@ -2,11 +2,18 @@ package site.coderan.usefulbookshelf.block.modblockentities;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import site.coderan.usefulbookshelf.ModMain;
 import site.coderan.usefulbookshelf.block.modblocks.ModBlocks;
+import site.coderan.usefulbookshelf.block.modblocks.UsefulBookshelfBlock;
+import site.coderan.usefulbookshelf.block.modblocks.UsefulBookshelfHalfBlock;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class ModBlockEntities {
     // 方块实体注册器
@@ -17,19 +24,32 @@ public class ModBlockEntities {
     // 注册useful_bookshelf的方块实体
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<UsefulBookshelfBlockEntity>> USEFUL_BOOKSHELF_ENTITY = BLOCK_ENTITY_REGISTER.register(
             "useful_bookshelf_entity",
-            () -> new BlockEntityType<>(
-                    UsefulBookshelfBlockEntity::new,
-                    ImmutableSet.of(ModBlocks.USEFUL_BOOKSHELF.get()),
-                    null
-            )
+            () -> {
+                List<UsefulBookshelfBlock> usefulBookshelfBlocks = new ArrayList<>();
+                ModBlocks.holders.forEach((holder, namespace) -> {
+                    usefulBookshelfBlocks.add(holder.get());
+                });
+                return new BlockEntityType<>(
+                        UsefulBookshelfBlockEntity::new,
+                        ImmutableSet.copyOf(usefulBookshelfBlocks.iterator()),
+                        null
+                );
+            }
     );
     // 注册useful_bookshelf_half的方块实体
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<UsefulBookshelfHalfBlockEntity>> USEFUL_BOOKSHELF_HALF_ENTITY = BLOCK_ENTITY_REGISTER.register(
             "useful_bookshelf_half_entity",
-            () -> new BlockEntityType<>(
-                    UsefulBookshelfHalfBlockEntity::new,
-                    ImmutableSet.of(ModBlocks.USEFUL_BOOKSHELF_HALF.get()),
-                    null
-            )
+            () -> {
+                List<UsefulBookshelfHalfBlock> usefulBookshelfHalfBlocks = new ArrayList<>();
+                ModBlocks.holdersHalf.forEach((holder, namespace) -> {
+                    usefulBookshelfHalfBlocks.add(holder.get());
+                });
+                return new BlockEntityType<>(
+                        UsefulBookshelfHalfBlockEntity::new,
+                        ImmutableSet.copyOf(usefulBookshelfHalfBlocks.iterator()),
+                        null
+                );
+            }
     );
+
 }

@@ -1,5 +1,7 @@
 {
   "usefulbookshelf.menu.useful_bookshelf_inventory": "bookshelf",
   "block.usefulbookshelf.useful_bookshelf": "useful bookshelf",
-  "block.usefulbookshelf.useful_bookshelf_half": "useful bookshelf half"
+  "block.usefulbookshelf.useful_bookshelf_half": "useful bookshelf half",
+
+  "subtitles.usefulbookshelf.bookshelf_sound": "sound of bookshelf"
 }
