@@ -38,7 +38,7 @@ public class ModItems {
 //    );
 
     static {
-        ModBlocks.holders.forEach((holder, namespace) -> {
+        ModBlocks.holders.forEach((holder, descriptionId) -> {
             ITEM_REGISTER.registerSimpleBlockItem(
                     holder.getRegisteredName().split(":")[1],
                     holder,
@@ -46,7 +46,7 @@ public class ModItems {
             );
         });
 
-        ModBlocks.holdersHalf.forEach((holder, namespace) -> {
+        ModBlocks.holdersHalf.forEach((holder, descriptionId) -> {
             ITEM_REGISTER.registerSimpleBlockItem(
                     holder.getRegisteredName().split(":")[1],
                     holder,

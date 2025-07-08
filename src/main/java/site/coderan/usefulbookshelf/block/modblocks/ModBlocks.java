@@ -53,7 +53,6 @@ public class ModBlocks {
         for (Block block : list) {
             String descriptionId = block.getDescriptionId();
             String[] split = descriptionId.split("\\.");
-            String namespace = split[1];
             String material = split[split.length - 1];
             holders.put(BLOCK_REGISTER.register(
                             "useful_bookshelf_" + material,
@@ -64,7 +63,7 @@ public class ModBlocks {
                                     .ignitedByLava()
                                     .pushReaction(PushReaction.NORMAL)
                             )
-                        ), namespace);
+                        ), descriptionId);
             holdersHalf.put(BLOCK_REGISTER.register(
                             "useful_bookshelf_half_" + material,
                             () -> new UsefulBookshelfHalfBlock(BlockBehaviour.Properties.of()
@@ -74,7 +73,7 @@ public class ModBlocks {
                                     .ignitedByLava()
                                     .pushReaction(PushReaction.NORMAL)
                             )
-                        ), namespace);
+                        ), descriptionId);
         }
     }
 }

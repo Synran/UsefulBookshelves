@@ -15,13 +15,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        ModBlocks.holders.forEach((holder, namespace) -> {
-            String registeredName = holder.getRegisteredName();
-            MutableComponent name = holder.get().getName().;
+        ModBlocks.holders.forEach((holder, descriptionId) -> {
             int a = 1;
         });
-        String s = I18n.get("block.minecraft.acacia_planks");
-        //Component.translatable("");
-        int a = 1;
     }
 }

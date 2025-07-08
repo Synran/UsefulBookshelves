@@ -26,7 +26,7 @@ public class ModBlockEntities {
             "useful_bookshelf_entity",
             () -> {
                 List<UsefulBookshelfBlock> usefulBookshelfBlocks = new ArrayList<>();
-                ModBlocks.holders.forEach((holder, namespace) -> {
+                ModBlocks.holders.forEach((holder, descriptionId) -> {
                     usefulBookshelfBlocks.add(holder.get());
                 });
                 return new BlockEntityType<>(
@@ -41,7 +41,7 @@ public class ModBlockEntities {
             "useful_bookshelf_half_entity",
             () -> {
                 List<UsefulBookshelfHalfBlock> usefulBookshelfHalfBlocks = new ArrayList<>();
-                ModBlocks.holdersHalf.forEach((holder, namespace) -> {
+                ModBlocks.holdersHalf.forEach((holder, descriptionId) -> {
                     usefulBookshelfHalfBlocks.add(holder.get());
                 });
                 return new BlockEntityType<>(
