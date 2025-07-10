@@ -1,14 +1,13 @@
 package site.coderan.usefulbookshelf.block.modblocks;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.*;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -37,7 +36,6 @@ import org.jetbrains.annotations.Nullable;
 import site.coderan.usefulbookshelf.ModMain;
 import site.coderan.usefulbookshelf.block.modblockentities.UsefulBookshelfBlockEntity;
 import site.coderan.usefulbookshelf.gui.modmenus.UsefulBookshelfMenu;
-import site.coderan.usefulbookshelf.item.ModItems;
 import site.coderan.usefulbookshelf.sounds.ModSounds;
 
 import java.util.ArrayList;
@@ -138,15 +136,13 @@ public class UsefulBookshelfBlock extends Block implements EntityBlock, SimpleWa
     @Override
     protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
         UsefulBookshelfBlockEntity blockEntity = (UsefulBookshelfBlockEntity) level.getBlockEntity(blockPos);
-
-        // play sound when open the bookshelf
-        level.playSound(player, blockPos, ModSounds.BOOKSHELF_SOUND.value(), SoundSource.BLOCKS);
-
         Direction hitDirection = blockHitResult.getDirection();
         MenuProvider menuProvider = this.getMenuProvider(blockState, level, blockPos, hitDirection);
         if (!level.isClientSide() && blockEntity instanceof UsefulBookshelfBlockEntity && player instanceof ServerPlayer) {
             if (menuProvider != null){
                 player.openMenu(menuProvider);
+                // play sound when open the bookshelf
+                level.playSound(player, blockPos, ModSounds.BOOKSHELF_SOUND.value(), SoundSource.BLOCKS);
                 return InteractionResult.SUCCESS;
             } else {
                 if (player.getMainHandItem().getItem() == Items.WATER_BUCKET) {

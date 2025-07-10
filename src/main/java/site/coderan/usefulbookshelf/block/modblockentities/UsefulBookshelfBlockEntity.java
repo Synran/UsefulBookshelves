@@ -3,13 +3,11 @@ package site.coderan.usefulbookshelf.block.modblockentities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -17,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 import site.coderan.usefulbookshelf.ModConfigs;
-import site.coderan.usefulbookshelf.item.ModItems;
 
 public class UsefulBookshelfBlockEntity extends BlockEntity {
     private ItemStackHandler bookshelfInventoryNorth = new ItemStackHandler(18){

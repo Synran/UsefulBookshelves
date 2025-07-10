@@ -14,7 +14,6 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import site.coderan.usefulbookshelf.ModMain;
-import site.coderan.usefulbookshelf.block.modblockentities.UsefulBookshelfBlockEntity;
 import site.coderan.usefulbookshelf.block.modblockentities.UsefulBookshelfHalfBlockEntity;
 import site.coderan.usefulbookshelf.block.modblocks.UsefulBookshelfBlock;
 

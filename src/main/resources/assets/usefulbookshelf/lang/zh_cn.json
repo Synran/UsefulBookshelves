@@ -1,7 +1,26 @@
 {
-  "usefulbookshelf.menu.useful_bookshelf_inventory": "书架",
-  "block.usefulbookshelf.useful_bookshelf": "有用的书架",
-  "block.usefulbookshelf.useful_bookshelf_half": "有用的半块书架",
-
-  "subtitles.usefulbookshelf.bookshelf_sound": "书架音效"
+  "block.usefulbookshelf.useful_bookshelf_acacia_planks": "金合欢书架",
+  "block.usefulbookshelf.useful_bookshelf_bamboo_planks": "竹子书架",
+  "block.usefulbookshelf.useful_bookshelf_birch_planks": "白桦书架",
+  "block.usefulbookshelf.useful_bookshelf_cherry_planks": "樱花书架",
+  "block.usefulbookshelf.useful_bookshelf_crimson_planks": "Crimson 书架",
+  "block.usefulbookshelf.useful_bookshelf_dark_oak_planks": "深色橡木书架",
+  "block.usefulbookshelf.useful_bookshelf_half_acacia_planks": "金合欢窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_bamboo_planks": "竹子窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_birch_planks": "白桦窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_cherry_planks": "樱花窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_crimson_planks": "Crimson 窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_dark_oak_planks": "深色项目窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_jungle_planks": "Jungle 窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_mangrove_planks": "Mangrove 窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_oak_planks": "橡木窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_spruce_planks": "Spruce 窄书架",
+  "block.usefulbookshelf.useful_bookshelf_half_warped_planks": "Warped 窄书架",
+  "block.usefulbookshelf.useful_bookshelf_jungle_planks": "Jungle 书架",
+  "block.usefulbookshelf.useful_bookshelf_mangrove_planks": "Mangrove 书架",
+  "block.usefulbookshelf.useful_bookshelf_oak_planks": "橡木书架",
+  "block.usefulbookshelf.useful_bookshelf_spruce_planks": "Spruce 书架",
+  "block.usefulbookshelf.useful_bookshelf_warped_planks": "Warped 书架",
+  "subtitles.usefulbookshelf.bookshelf_sound": "书架音效",
+  "usefulbookshelf.menu.useful_bookshelf_inventory": "书架"
 }

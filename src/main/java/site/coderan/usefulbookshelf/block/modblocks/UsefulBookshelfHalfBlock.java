@@ -36,10 +36,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 import site.coderan.usefulbookshelf.ModMain;
-import site.coderan.usefulbookshelf.block.modblockentities.UsefulBookshelfBlockEntity;
 import site.coderan.usefulbookshelf.block.modblockentities.UsefulBookshelfHalfBlockEntity;
 import site.coderan.usefulbookshelf.gui.modmenus.UsefulBookshelfMenu;
-import site.coderan.usefulbookshelf.item.ModItems;
 import site.coderan.usefulbookshelf.sounds.ModSounds;
 
 import java.util.ArrayList;
@@ -146,15 +144,13 @@ public class UsefulBookshelfHalfBlock  extends Block implements EntityBlock, Sim
     @Override
     protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
         UsefulBookshelfHalfBlockEntity blockEntity = (UsefulBookshelfHalfBlockEntity) level.getBlockEntity(blockPos);
-
-        // play sound when open the bookshelf
-        level.playSound(player, blockPos, ModSounds.BOOKSHELF_SOUND.value(), SoundSource.BLOCKS);
-
         Direction hitDirection = blockHitResult.getDirection();
         MenuProvider menuProvider = this.getMenuProvider(blockState, level, blockPos, hitDirection);
         if (!level.isClientSide() && blockEntity instanceof UsefulBookshelfHalfBlockEntity && player instanceof ServerPlayer) {
             if (menuProvider != null){
                 player.openMenu(menuProvider);
+                // play sound when open the bookshelf
+                level.playSound(player, blockPos, ModSounds.BOOKSHELF_SOUND.value(), SoundSource.BLOCKS);
                 return InteractionResult.SUCCESS;
             } else {
                 if (player.getMainHandItem().getItem() == Items.WATER_BUCKET) {

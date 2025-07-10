@@ -2,7 +2,6 @@ package site.coderan.usefulbookshelf.block.modblockentities;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -13,7 +12,6 @@ import site.coderan.usefulbookshelf.block.modblocks.UsefulBookshelfHalfBlock;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class ModBlockEntities {
     // 方块实体注册器
