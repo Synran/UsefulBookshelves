@@ -8,6 +8,7 @@ import site.coderan.usefulbookshelf.block.modblockentities.ModBlockEntities;
 import site.coderan.usefulbookshelf.block.modblocks.ModBlocks;
 import site.coderan.usefulbookshelf.gui.modmenus.ModMenus;
 import site.coderan.usefulbookshelf.item.ModItems;
+import site.coderan.usefulbookshelf.item.ModTabs;
 import site.coderan.usefulbookshelf.sounds.ModSounds;
 
 @Mod(ModMain.MOD_ID)
@@ -18,6 +19,7 @@ public class ModMain {
         ModBlocks.BLOCK_REGISTER.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITY_REGISTER.register(modEventBus);
         ModItems.ITEM_REGISTER.register(modEventBus);
+        ModTabs.CREATIVE_MOD_TAB_REGISTER.register(modEventBus);
         ModMenus.MENU_REGISTER.register(modEventBus);
         ModSounds.SOUND_REGISTER.register(modEventBus);
 

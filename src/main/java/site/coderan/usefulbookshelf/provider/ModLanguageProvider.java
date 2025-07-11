@@ -22,5 +22,6 @@ public class ModLanguageProvider extends LanguageProvider {
         });
         add("usefulbookshelf.menu.useful_bookshelf_inventory", "Bookshelf inventory");
         add("subtitles.usefulbookshelf.bookshelf_sound", "sound of bookshelf");
+        add("itemGroup." + ModMain.MOD_ID + ".modTabBookshelf", "Useful Bookshelf");
     }
 }
