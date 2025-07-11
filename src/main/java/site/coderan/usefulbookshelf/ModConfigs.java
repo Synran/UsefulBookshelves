@@ -23,7 +23,7 @@ public class ModConfigs {
     public static final ModConfigSpec SPEC = BUILDER.build();
 
     private static boolean validateItemName(Object obj){
-        return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));
+        return obj instanceof String;
     }
 
     @SubscribeEvent
