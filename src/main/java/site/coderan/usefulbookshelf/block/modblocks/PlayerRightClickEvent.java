@@ -2,6 +2,7 @@ package site.coderan.usefulbookshelf.block.modblocks;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -33,9 +34,13 @@ public class PlayerRightClickEvent {
                         String descriptionId = itemStack.getItem().getDescriptionId();
                         // 将descriptionId维护进Common Config中
                         List<? extends String> newConfig = ModConfigs.ACCEPT_STORED_ITEMS.get();
-                        ((List<String>)newConfig).add(descriptionId);
-                        ModConfigs.ACCEPT_STORED_ITEMS.set(newConfig);
-                        ModConfigs.ACCEPT_STORED_ITEMS.save();
+                        if (!newConfig.contains(descriptionId)){
+                            ((List<String>)newConfig).add(descriptionId);
+                            ModConfigs.ACCEPT_STORED_ITEMS.set(newConfig);
+                            ModConfigs.ACCEPT_STORED_ITEMS.save();
+                            // 打印消息通知玩家配置成功
+                            event.getEntity().sendSystemMessage(Component.translatable("chat.config.usefulbookshelf.success"));
+                        }
                     }
                 });
                 ModBlocks.holdersHalf.forEach((holder, s) -> {
@@ -45,9 +50,13 @@ public class PlayerRightClickEvent {
                         String descriptionId = itemStack.getItem().getDescriptionId();
                         // 将descriptionId维护进Common Config中
                         List<? extends String> newConfig = ModConfigs.ACCEPT_STORED_ITEMS.get();
-                        ((List<String>)newConfig).add(descriptionId);
-                        ModConfigs.ACCEPT_STORED_ITEMS.set(newConfig);
-                        ModConfigs.ACCEPT_STORED_ITEMS.save();
+                        if (!newConfig.contains(descriptionId)){
+                            ((List<String>)newConfig).add(descriptionId);
+                            ModConfigs.ACCEPT_STORED_ITEMS.set(newConfig);
+                            ModConfigs.ACCEPT_STORED_ITEMS.save();
+                            // 打印消息通知玩家配置成功
+                            event.getEntity().sendSystemMessage(Component.translatable("chat.config.usefulbookshelf.success"));
+                        }
                     }
                 });
             }

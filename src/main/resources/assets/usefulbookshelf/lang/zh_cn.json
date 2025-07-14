@@ -21,6 +21,7 @@
   "block.usefulbookshelf.useful_bookshelf_oak_planks": "橡木书架",
   "block.usefulbookshelf.useful_bookshelf_spruce_planks": "云杉书架",
   "block.usefulbookshelf.useful_bookshelf_warped_planks": "诡异书架",
+  "chat.config.usefulbookshelf.success": "现在可以存你手上的书了",
   "itemGroup.usefulbookshelf.modTabBookshelf": "有用书架",
   "subtitles.usefulbookshelf.bookshelf_sound": "书架音效",
   "usefulbookshelf.menu.useful_bookshelf_inventory": "书架"
