@@ -23,6 +23,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("usefulbookshelf.menu.useful_bookshelf_inventory", "Bookshelf inventory");
         add("subtitles.usefulbookshelf.bookshelf_sound", "sound of bookshelf");
         add("itemGroup." + ModMain.MOD_ID + ".modTabBookshelf", "Useful Bookshelf");
-        add("chat.config.usefulbookshelf.success", "Book in your hand can be stored now.");
+        add("chat.config_add.usefulbookshelf.success", "Book in your hand can be stored now.");
+        add("chat.config_remove.usefulbookshelf.success", "Item in your hand can not be stored now.");
     }
 }
