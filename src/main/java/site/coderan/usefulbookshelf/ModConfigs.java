@@ -14,7 +14,7 @@ import java.util.List;
 public class ModConfigs {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    private static final ModConfigSpec.ConfigValue<List<? extends String>> ACCEPT_STORED_ITEMS = BUILDER
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> ACCEPT_STORED_ITEMS = BUILDER
             .comment("Defines which books could be stored in bookshelves\n定义哪些书可以储存到书架中")
             .defineListAllowEmpty("accept_stored_items", new ArrayList<String>(), ModConfigs::validateItemName);
 

@@ -39,7 +39,7 @@ public class UsefulBookshelfMenu extends AbstractContainerMenu {
                 || clickedStack.getItem() == Items.ENCHANTED_BOOK
                 || clickedStack.getItem() == Items.WRITABLE_BOOK
                 || clickedStack.getItem() == Items.KNOWLEDGE_BOOK
-                || ModConfigs.accept_stored_items.contains(clickedStack.toString().split(" ")[1])
+                || ModConfigs.accept_stored_items.contains(clickedStack.getItem().getDescriptionId())
         ){
             // 当下标小于36时，说明点击的物品是玩家背包物品，需要快速放置到书架仓库
             // 当下标大于等于36时，说明点击的物品是书架仓库物品，需要快速放置到玩家背包

@@ -32,7 +32,7 @@ public class UsefulBookshelfBlockEntity extends BlockEntity {
                     || stack.getItem() == Items.ENCHANTED_BOOK
                     || stack.getItem() == Items.WRITABLE_BOOK
                     || stack.getItem() == Items.KNOWLEDGE_BOOK
-                    || ModConfigs.accept_stored_items.contains(stack.toString().split(" ")[1])
+                    || ModConfigs.accept_stored_items.contains(stack.getItem().getDescriptionId())
             ) {
                 return true;
             } else {
@@ -55,7 +55,7 @@ public class UsefulBookshelfBlockEntity extends BlockEntity {
                     || stack.getItem() == Items.ENCHANTED_BOOK
                     || stack.getItem() == Items.WRITABLE_BOOK
                     || stack.getItem() == Items.KNOWLEDGE_BOOK
-                    || ModConfigs.accept_stored_items.contains(stack.toString().split(" ")[1])
+                    || ModConfigs.accept_stored_items.contains(stack.getItem().getDescriptionId())
             ) {
                 return true;
             } else {

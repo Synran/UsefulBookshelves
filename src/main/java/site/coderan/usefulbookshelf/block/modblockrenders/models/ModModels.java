@@ -1,10 +1,11 @@
-package site.coderan.usefulbookshelf;
+package site.coderan.usefulbookshelf.block.modblockrenders.models;
 
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ModelEvent;
+import site.coderan.usefulbookshelf.ModMain;
 
 @EventBusSubscriber(modid = ModMain.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ModModels {

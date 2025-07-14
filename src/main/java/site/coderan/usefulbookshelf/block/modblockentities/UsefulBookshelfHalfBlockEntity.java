@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
+import site.coderan.usefulbookshelf.ModConfigs;
 
 public class UsefulBookshelfHalfBlockEntity  extends BlockEntity {
     private ItemStackHandler bookshelfInventory = new ItemStackHandler(18){
@@ -26,7 +27,13 @@ public class UsefulBookshelfHalfBlockEntity  extends BlockEntity {
 
         @Override
         public boolean isItemValid(int slot, ItemStack stack) {
-            if (stack.getItem() == Items.BOOK || stack.getItem() == Items.WRITTEN_BOOK || stack.getItem() == Items.ENCHANTED_BOOK || stack.getItem() == Items.WRITABLE_BOOK || stack.getItem() == Items.KNOWLEDGE_BOOK){
+            if (stack.getItem() == Items.BOOK
+                    || stack.getItem() == Items.WRITTEN_BOOK
+                    || stack.getItem() == Items.ENCHANTED_BOOK
+                    || stack.getItem() == Items.WRITABLE_BOOK
+                    || stack.getItem() == Items.KNOWLEDGE_BOOK
+                    || ModConfigs.accept_stored_items.contains(stack.getItem().getDescriptionId())
+            ){
                 return true;
             } else {
                 return false;
