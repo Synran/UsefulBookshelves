@@ -6,7 +6,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -18,13 +17,13 @@ import site.coderan.usefulbookshelf.ModMain;
 import java.util.List;
 
 @EventBusSubscriber(modid = ModMain.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
-public class PlayerRightClickEvent {
+public class PlayerLeftClickEvent {
     @SubscribeEvent
-    public static void withCrouching(PlayerInteractEvent.RightClickBlock event){
+    public static void withCrouching(PlayerInteractEvent.LeftClickBlock event){
         if (!event.getLevel().isClientSide && event.getHand() == InteractionHand.MAIN_HAND){
             if (event.getEntity().isCrouching()){
                 if (event.getEntity().getItemInHand(InteractionHand.OFF_HAND).getItem() == Items.PAPER){
-                    // 拿到被右击的方块
+                    // 拿到被左击的方块
                     BlockPos pos = event.getPos();
                     BlockState blockState = Minecraft.getInstance().level.getBlockState(pos);
                     Block block = blockState.getBlock();
@@ -62,7 +61,7 @@ public class PlayerRightClickEvent {
                     });
                 }
                 if (event.getEntity().getItemInHand(InteractionHand.OFF_HAND).getItem() == Items.SHEARS){
-                    // 拿到被右击的方块
+                    // 拿到被左击的方块
                     BlockPos pos = event.getPos();
                     BlockState blockState = Minecraft.getInstance().level.getBlockState(pos);
                     Block block = blockState.getBlock();
