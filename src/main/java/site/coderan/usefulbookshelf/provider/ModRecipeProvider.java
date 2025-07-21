@@ -42,9 +42,9 @@ public class ModRecipeProvider extends RecipeProvider {
             }).findFirst().get();
 
             ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, holder.get())
-                    .pattern("XXX")
-                    .pattern("#X#")
-                    .pattern("XXX")
+                    .pattern(" XX")
+                    .pattern(" X#")
+                    .pattern(" XX")
                     .define('X', slab)
                     .define('#', Items.STICK)
                     .unlockedBy("has_spruce", has(slab))
