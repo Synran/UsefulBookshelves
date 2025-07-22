@@ -11,8 +11,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import site.coderan.usefulbookshelf.ModConfigs;
 import site.coderan.usefulbookshelf.ModMain;
+import site.coderan.usefulbookshelf.net.ConfigChangeData;
 
 import java.util.List;
 
@@ -20,7 +22,7 @@ import java.util.List;
 public class PlayerLeftClickEvent {
     @SubscribeEvent
     public static void withCrouching(PlayerInteractEvent.LeftClickBlock event){
-        if (!event.getLevel().isClientSide && event.getHand() == InteractionHand.MAIN_HAND){
+        if (event.getLevel().isClientSide && event.getHand() == InteractionHand.MAIN_HAND){
             if (event.getEntity().isCrouching()){
                 if (event.getEntity().getItemInHand(InteractionHand.OFF_HAND).getItem() == Items.PAPER){
                     // 拿到被左击的方块
@@ -41,6 +43,8 @@ public class PlayerLeftClickEvent {
                                 // 打印消息通知玩家配置成功
                                 event.getEntity().sendSystemMessage(Component.translatable("chat.config_add.usefulbookshelf.success"));
                             }
+                            // 发送消息使Server同步更新Common Config
+                            PacketDistributor.sendToServer(new ConfigChangeData(0, descriptionId));
                         }
                     });
                     ModBlocks.holdersHalf.forEach((holder, s) -> {
@@ -57,6 +61,8 @@ public class PlayerLeftClickEvent {
                                 // 打印消息通知玩家配置成功
                                 event.getEntity().sendSystemMessage(Component.translatable("chat.config_add.usefulbookshelf.success"));
                             }
+                            // 发送消息使Server同步更新Common Config
+                            PacketDistributor.sendToServer(new ConfigChangeData(0, descriptionId));
                         }
                     });
                 }
@@ -79,6 +85,8 @@ public class PlayerLeftClickEvent {
                                 // 打印消息通知玩家配置成功
                                 event.getEntity().sendSystemMessage(Component.translatable("chat.config_remove.usefulbookshelf.success"));
                             }
+                            // 发送消息使Server同步更新Common Config
+                            PacketDistributor.sendToServer(new ConfigChangeData(1, descriptionId));
                         }
                     });
                     ModBlocks.holdersHalf.forEach((holder, s) -> {
@@ -95,6 +103,8 @@ public class PlayerLeftClickEvent {
                                 // 打印消息通知玩家配置成功
                                 event.getEntity().sendSystemMessage(Component.translatable("chat.config_remove.usefulbookshelf.success"));
                             }
+                            // 发送消息使Server同步更新Common Config
+                            PacketDistributor.sendToServer(new ConfigChangeData(1, descriptionId));
                         }
                     });
                 }
