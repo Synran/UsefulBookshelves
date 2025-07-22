@@ -16,10 +16,13 @@ just like the minecraft:bookshelf, my bookshelves did provide ability of enchant
 <br>
 ![enchant](https://cdn.modrinth.com/data/cached_images/9b95338395d0a59086fe5c1df040eceb7ece735d_0.webp)
 ## can I store other mod's book in it?
-yes,but you need add that book's key in my mod's config file
+yes,we have two way to make it
 <br>
-the key looks like "minecraft:stick",you could press "F3" + "H" in the game and hover your cursor in any items to get the key
+the eaziest,you hold the book you want to store in your main hand and hold "Paper" in your off hand, then "shift + left click" any useful bookshelf. you'll find you can store the book then.
+<br>
+the harder, manualy write the book's description id to mod's common config file, the id looks like "item.minecrafts.tick",you could press "F3" + "H" in the game and hover your cursor in any items to get the id.
 # How to install
 first, you download the latest version file. then just put it in your mods folder
 # Future
 - more bookshelves with different types and materials crafted by different planks even in iron block
+- order or disorder book's model
