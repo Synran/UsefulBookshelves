@@ -27,7 +27,7 @@ public class ModConfigs {
     }
 
     @SubscribeEvent
-    static void onLoad(final ModConfigEvent event) {
+    static void onChange(final ModConfigEvent event) {
         accept_stored_items = ACCEPT_STORED_ITEMS.get();
     }
 }
